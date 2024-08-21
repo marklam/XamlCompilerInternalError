@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+        xmlns:material="using:Material.Icons.Avalonia"
+        xmlns:vm="using:XamlCompilerInternalError"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="XamlCompilerInternalError.UserControl1"
+        Design.DataContext="{Binding Source={x:Static vm:UserControlViewModel.DesignVM}}"
+        x:DataType="vm:UserControlViewModel">
+    <Grid>
+      <Grid.Children>
+        <controls:FloatingButton
+          IsExtended="true"
+          Margin="4"
+          HorizontalAlignment="Right"
+          Padding="0,0,40,0"
+          ToolTip.Tip="Click this button to go to the next stage of the workflow"
+          IsEnabled="{Binding CanAdvance}"
+          Click=""
+          >
+          <controls:FloatingButton.Content>
+            <StackPanel Orientation="Horizontal" Height="24">
+              <TextBlock Margin="16,0,0,0" Classes="Subtitle2" VerticalAlignment="Center" Text="Next" />
+              <material:MaterialIcon Kind="NavigateNext" Width="24" Height="24" VerticalAlignment="Center" />
+            </StackPanel>
+          </controls:FloatingButton.Content>
+        </controls:FloatingButton>
+
+      </Grid.Children>
+    </Grid>
+</UserControl>
